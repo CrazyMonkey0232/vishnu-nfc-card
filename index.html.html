@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17130f" />
+  <meta name="description" content="Vishnu Vijayan - Managing Director, D'code Printing Solutions" />
+  <title>Vishnu Vijayan | D'code Printing Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#17130f;
+      --surface:#211b15;
+      --surface-2:#2a221a;
+      --gold:#ead3a0;
+      --gold-2:#c8ab76;
+      --text:#f8f1e4;
+      --muted:#b9ab96;
+      --line:rgba(234,211,160,.16);
+      --shadow:0 30px 80px rgba(0,0,0,.36);
+      --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'DM Sans',system-ui,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 20% 0%,rgba(168,140,95,.16),transparent 35%),
+        radial-gradient(circle at 90% 20%,rgba(116,91,61,.10),transparent 30%),
+        var(--bg);
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1160px,calc(100% - 40px));margin:auto}
+
+    .nav{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter:blur(18px);
+      background:rgba(23,19,15,.76);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:baseline;gap:10px;font-family:'Manrope',sans-serif}
+    .brand strong{font-size:29px;font-weight:500;letter-spacing:.4px;color:var(--gold)}
+    .brand span{font-size:13px;color:var(--muted)}
+    .nav-links{display:flex;gap:26px;font-size:14px;color:#d6c8b3}
+    .nav-links a:hover{color:var(--gold)}
+
+    .hero{padding:92px 0 66px}
+    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:58px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 13px;border:1px solid var(--line);border-radius:999px;color:var(--gold);font-size:13px;background:rgba(255,255,255,.02)}
+    .eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--gold)}
+    h1{font-family:'Manrope',sans-serif;font-size:clamp(48px,7vw,88px);line-height:.96;letter-spacing:-3px;margin:24px 0 22px;max-width:760px}
+    h1 span{color:var(--gold)}
+    .hero-copy{font-size:18px;line-height:1.75;color:var(--muted);max-width:670px;margin:0 0 34px}
+    .cta-row{display:flex;flex-wrap:wrap;gap:14px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 20px;border-radius:14px;border:1px solid var(--line);font-weight:700;font-size:14px;transition:.2s}
+    .btn-primary{background:var(--gold);color:#21180e;border-color:var(--gold)}
+    .btn-primary:hover{transform:translateY(-2px);background:#f0ddb4}
+    .btn-secondary:hover{border-color:rgba(234,211,160,.35);background:rgba(255,255,255,.03)}
+
+    .profile-card{position:relative;overflow:hidden;padding:34px;border:1px solid var(--line);border-radius:32px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));box-shadow:var(--shadow)}
+    .profile-card:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(234,211,160,.10);filter:blur(5px);right:-100px;top:-90px}
+    .monogram{width:78px;height:78px;border-radius:22px;display:grid;place-items:center;background:var(--gold);color:#261c12;font-family:'Manrope',sans-serif;font-size:28px;font-weight:800;margin-bottom:28px}
+    .profile-card h2{margin:0;font-size:28px;font-family:'Manrope',sans-serif}
+    .profile-card p{margin:8px 0 0;color:var(--gold)}
+    .mini-line{height:1px;background:var(--line);margin:28px 0}
+    .meta{display:grid;gap:14px;color:var(--muted);font-size:14px}
+    .meta div{display:flex;justify-content:space-between;gap:20px}.meta b{color:#f4e8d5;font-weight:600}
+
+    section{padding:72px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:30px}
+    .section-head h2{font-family:'Manrope',sans-serif;font-size:38px;margin:0;letter-spacing:-1.2px}
+    .section-head p{margin:0;color:var(--muted);max-width:500px;line-height:1.7}
+
+    .connect-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    .connect-card{padding:24px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));transition:.2s;min-height:170px;display:flex;flex-direction:column;justify-content:space-between}
+    .connect-card:hover{transform:translateY(-4px);border-color:rgba(234,211,160,.35);background:rgba(255,255,255,.045)}
+    .icon{width:52px;height:52px;border-radius:16px;border:1px solid rgba(234,211,160,.25);display:grid;place-items:center;color:var(--gold);background:rgba(234,211,160,.04)}
+    .icon svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .connect-card h3{margin:22px 0 4px;font-size:18px}.connect-card small{color:var(--muted)}
+
+    .banner{padding:34px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(110deg,rgba(234,211,160,.10),rgba(255,255,255,.025));display:flex;justify-content:space-between;align-items:center;gap:24px}
+    .banner h3{font-family:'Manrope',sans-serif;font-size:28px;margin:0 0 7px}.banner p{margin:0;color:var(--muted)}
+
+    footer{padding:34px 0 44px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .footer-brand{color:var(--gold);font-weight:700}
+
+    @media(max-width:1000px){.connect-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:850px){
+      .nav-links{display:none}.hero{padding-top:62px}.hero-grid{grid-template-columns:1fr}.profile-card{max-width:560px}.connect-grid{grid-template-columns:repeat(2,1fr)}.section-head{align-items:start;flex-direction:column}.banner{align-items:flex-start;flex-direction:column}
+    }
+    @media(max-width:540px){
+      .container{width:min(100% - 26px,1160px)}.hero{padding:44px 0 34px}h1{font-size:48px;letter-spacing:-2px}.hero-copy{font-size:16px}.profile-card{padding:26px}.connect-grid{grid-template-columns:1fr}.brand span{display:none}.section-head h2{font-size:31px}.cta-row .btn{width:100%}.footer-inner{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand"><strong>D’code</strong><span>printing solutions</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a><a href="#connect">Connect</a><a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><i></i> Digital Business Card</div>
+          <h1>Vishnu <span>Vijayan</span></h1>
+          <p class="hero-copy">Managing Director at D’code Printing Solutions. A clean, mobile-first digital profile designed for instant access from an NFC card.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tel:+919656940051">Call Now</a>
+            <a class="btn btn-secondary" href="https://wa.me/919656940051" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+        <aside class="profile-card" id="about">
+          <div class="monogram">VV</div>
+          <h2>Vishnu Vijayan</h2>
+          <p>Managing Director</p>
+          <div class="mini-line"></div>
+          <div class="meta">
+            <div><span>Company</span><b>D’code Printing Solutions</b></div>
+            <div><span>Phone</span><b>+91 96569 40051</b></div>
+            <div><span>Email</span><b>dcodeprinting@gmail.com</b></div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section id="connect">
+      <div class="container">
+        <div class="section-head">
+          <h2>Connect instantly</h2>
+          <p>Tap any option below to call, message, email, view Instagram, or open the location directly.</p>
+        </div>
+        <div class="connect-grid">
+          <a class="connect-card" href="tel:+919656940051"><span class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg></span><div><h3>Call</h3><small>+91 96569 40051</small></div></a>
+          <a class="connect-card" href="https://wa.me/919656940051" target="_blank" rel="noopener"><span class="icon"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-13.4 7.85L3 21l1.18-4.42A9 9 0 1 1 21 12z"/><path d="M8.5 8.3c.4 3.1 2.2 5 5.4 6.2"/></svg></span><div><h3>WhatsApp</h3><small>+91 96569 40051</small></div></a>
+          <a class="connect-card" href="https://www.instagram.com/d_code_aesthetic?stkn=MWUzaWtnNm92OHJ4" target="_blank" rel="noopener"><span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor" stroke="none"/></svg></span><div><h3>Instagram</h3><small>@d_code_aesthetic</small></div></a>
+          <a class="connect-card" href="mailto:dcodeprinting@gmail.com"><span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg></span><div><h3>Email</h3><small>dcodeprinting@gmail.com</small></div></a>
+          <a class="connect-card" href="https://maps.app.goo.gl/dRWJj2ui4o7pgwcp8?g_st=ic" target="_blank" rel="noopener"><span class="icon"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><h3>Location</h3><small>Open in Google Maps</small></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="banner">
+          <div><h3>Save this contact for later.</h3><p>Your NFC card can point directly to this page once it is hosted online.</p></div>
+          <a class="btn btn-primary" href="tel:+919656940051">Contact Vishnu</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner"><span class="footer-brand">D’code Printing Solutions</span><span>Vishnu Vijayan · Managing Director</span></div>
+  </footer>
+</body>
+</html>
